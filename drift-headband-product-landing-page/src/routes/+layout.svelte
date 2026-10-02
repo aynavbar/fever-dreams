@@ -75,7 +75,7 @@
 	</div>
 {/if}
 
-<main class="bg-white min-h-screen">
+<main class="bg-white min-h-dvh">
 	{@render children()}
 </main>
 
