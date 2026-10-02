@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Activity, Ear, Waves } from 'lucide-svelte';
 </script>
 
 <!-- Hero Section -->
@@ -11,8 +12,8 @@
 	<!-- Content -->
 	<div class="relative z-10 flex flex-col items-center text-center mt-32 px-6">
 		<h1 class="text-7xl md:text-9xl font-semibold tracking-tighter text-white mb-4">Drift</h1>
-		<p class="text-2xl md:text-4xl font-medium tracking-tight text-white/90 mb-12 max-w-2xl">
-			Audio, reimagined for rest.
+		<p class="text-3xl md:text-5xl font-medium tracking-tight text-white/90 mb-12 max-w-2xl">
+			Sound sleep.
 		</p>
 		
 		<div class="flex flex-col items-center gap-4">
@@ -30,11 +31,8 @@
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black">
 			Zero Pressure.<br/><span class="text-gray-400">Absolute Balance.</span>
 		</h2>
-		<p class="text-3xl md:text-5xl font-medium tracking-tight text-gray-800 leading-tight">
-			Traditional earbuds create physical fatigue.<br class="hidden md:block"/> Over-ear headphones shift the moment your head hits the pillow.
-		</p>
 		<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-500 max-w-3xl mx-auto leading-relaxed">
-			Drift solves the side-sleeper's dilemma. Housed in an ultra-slim, breathable acoustic fabric, the device sits completely flush against your head. You can turn, rest, and sleep naturally.
+			Housed in an ultra-slim, breathable acoustic fabric, the device sits completely flush against your head. You can turn, rest, and sleep naturally.
 		</p>
 	</div>
 </section>
@@ -56,6 +54,9 @@
 			
 			<!-- Card 1 -->
 			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-[500px] w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50">
+				<div class="mb-auto">
+					<Activity size={48} strokeWidth={1.5} class="text-black mb-6" />
+				</div>
 				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Precision Micro-Transducers</h3>
 				<p class="text-lg md:text-xl font-medium text-gray-500 leading-relaxed">
 					Specially tuned, high-density actuators are woven into the headband's temporal zones. These convert standard audio signals into subtle, precise mechanical vibrations.
@@ -64,6 +65,9 @@
 
 			<!-- Card 2 -->
 			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50">
+				<div class="mb-auto">
+					<Ear size={48} strokeWidth={1.5} class="text-black mb-6" />
+				</div>
 				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Direct-to-Cochlea</h3>
 				<p class="text-lg md:text-xl font-medium text-gray-500 leading-relaxed">
 					Instead of pushing sound waves through the air, vibrations travel safely and silently through your cranial bones directly to your inner ear.
@@ -72,6 +76,9 @@
 
 			<!-- Card 3 -->
 			<div class="bg-black text-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm">
+				<div class="mb-auto">
+					<Waves size={48} strokeWidth={1.5} class="text-white mb-6" />
+				</div>
 				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Uncompromised Fidelity</h3>
 				<p class="text-lg md:text-xl font-medium text-gray-400 leading-relaxed">
 					Advanced equalization algorithms compensate for bone density transfer, preserving the deep, resonant bass and crisp highs of industry-leading in-ear monitors.
@@ -83,7 +90,7 @@
 </section>
 
 <!-- Specs Section -->
-<section class="min-h-screen w-full bg-white px-6 py-24 flex items-center">
+<section id="buy" class="min-h-screen w-full bg-white px-6 py-24 flex items-center">
 	<div class="max-w-5xl mx-auto w-full">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-16 text-center md:text-left">
 			Technical Specifications
