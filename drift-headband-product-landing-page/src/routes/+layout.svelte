@@ -14,7 +14,7 @@
 	function handleScroll() {
 		if (typeof window === 'undefined') return;
 		const currentScrollY = window.scrollY;
-		
+
 		isTop = currentScrollY < 50;
 
 		if (currentScrollY > lastScrollY && currentScrollY > 100) {
@@ -47,7 +47,7 @@
 <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b {navbarVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} {isMobileMenuOpen ? 'bg-white border-transparent text-black' : isTop ? 'bg-transparent border-transparent text-black' : 'bg-white/90 backdrop-blur-md border-gray-100 text-black'}">
 	<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 		<a href="/" class="text-lg font-medium tracking-tight">Sleep Dynamics</a>
-		
+
 		<!-- Desktop Links -->
 		<div class="hidden md:flex gap-8 items-center text-sm font-medium tracking-tight">
 			<a href="/#" class="text-gray-500 hover:text-black transition-colors">Aura Mask</a>
@@ -68,7 +68,7 @@
 
 <!-- Mobile Menu Overlay -->
 {#if isMobileMenuOpen}
-	<div transition:slide={{ duration: 400 }} class="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col gap-8 text-3xl font-medium tracking-tight md:hidden h-screen h-dvh w-full overflow-y-auto">
+	<div transition:slide={{ duration: 400 }} class="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col gap-8 text-3xl font-medium tracking-tight md:hidden h-dvh w-full overflow-y-auto">
 		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Aura Mask</a>
 		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Zenith Pillow</a>
 		<a href="/drift-headband" class="text-black transition-colors" onclick={toggleMobileMenu}>Drift Headband</a>
