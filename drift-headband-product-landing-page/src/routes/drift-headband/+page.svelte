@@ -1,5 +1,35 @@
 <script lang="ts">
-	import { Activity, Ear, Waves } from 'lucide-svelte';
+	import { Activity, Ear, Waves, ChevronLeft, ChevronRight, Redo } from 'lucide-svelte';
+
+	let scrollContainer: HTMLElement;
+	let isAtEnd = $state(false);
+
+	function checkScrollEnd() {
+		if (!scrollContainer) return;
+		const { scrollLeft, clientWidth, scrollWidth } = scrollContainer;
+		isAtEnd = scrollLeft + clientWidth >= scrollWidth - 25;
+	}
+
+	function scrollLeft() {
+		if (scrollContainer) {
+			scrollContainer.scrollBy({ left: -window.innerWidth * 0.8, behavior: 'smooth' });
+		}
+	}
+
+	function scrollRight() {
+		if (scrollContainer) {
+			scrollContainer.scrollBy({ left: window.innerWidth * 0.8, behavior: 'smooth' });
+		}
+	}
+
+	function handleNextOrReset() {
+		if (!scrollContainer) return;
+		if (isAtEnd) {
+			scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+		} else {
+			scrollRight();
+		}
+	}
 </script>
 
 <!-- Hero Section -->
@@ -50,7 +80,7 @@
 		</div>
 
 		<!-- Bento Grid / Scrollable List on Mobile -->
-		<div class="flex md:grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar" style="scroll-snap-type: x mandatory;">
+		<div bind:this={scrollContainer} onscroll={checkScrollEnd} class="flex md:grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0" style="scroll-snap-type: x mandatory;">
 			
 			<!-- Card 1 -->
 			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-[500px] w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50">
@@ -85,6 +115,20 @@
 				</p>
 			</div>
 
+		</div>
+
+		<!-- Mobile Only Navigation Buttons Below Cards -->
+		<div class="flex gap-4 justify-center mt-8 md:hidden">
+			<button onclick={scrollLeft} class="p-4 rounded-full border border-gray-200 bg-white hover:bg-gray-50 transition-colors shadow-sm focus:outline-none" aria-label="Previous feature">
+				<ChevronLeft size={28} strokeWidth={1.5} class="text-black" />
+			</button>
+			<button onclick={handleNextOrReset} class="p-4 rounded-full border border-gray-200 bg-white hover:bg-gray-50 transition-colors shadow-sm focus:outline-none" aria-label={isAtEnd ? "Reset to beginning" : "Next feature"}>
+				{#if isAtEnd}
+					<Redo size={28} strokeWidth={1.5} class="text-black" />
+				{:else}
+					<ChevronRight size={28} strokeWidth={1.5} class="text-black" />
+				{/if}
+			</button>
 		</div>
 	</div>
 </section>
