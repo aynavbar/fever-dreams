@@ -33,30 +33,30 @@
 </script>
 
 <!-- Hero Section -->
-<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<section class="relative h-screen h-dvh w-full flex items-end justify-start overflow-hidden pb-6 md:pb-8">
 	<img src="/hero-bg.jpg" alt="Drift Headband variants" class="absolute inset-0 w-full h-full object-cover" />
 	
-	<!-- Gradient Overlay -->
-	<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+	<!-- Gradient Overlay: Rich dark contrast strictly around the bottom text area, fading quickly to clear -->
+	<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-35% to-transparent"></div>
 	
 	<!-- Content -->
-	<div class="relative z-10 flex flex-col items-center text-center mt-32 px-6">
-		<h1 class="text-7xl md:text-9xl font-semibold tracking-tighter text-white mb-4">Drift</h1>
-		<p class="text-3xl md:text-5xl font-medium tracking-tight text-white/90 mb-12 max-w-2xl">
+	<div class="relative z-10 flex flex-col items-start text-left max-w-7xl mx-auto px-6 w-full">
+		<h1 class="text-7xl md:text-9xl font-semibold tracking-tighter text-white mb-1 md:mb-2 leading-none">Drift</h1>
+		<p class="text-2xl md:text-4xl font-medium tracking-tight text-white/90 mb-6 max-w-2xl">
 			Sound sleep.
 		</p>
 		
-		<div class="flex flex-col items-center gap-4">
-			<a href="#buy" class="bg-white text-black px-10 py-4 rounded-full font-semibold tracking-tight text-lg hover:scale-105 transition-transform duration-300">
+		<div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+			<a href="#buy" class="bg-white text-black px-9 py-3.5 rounded-full font-semibold tracking-tight text-base md:text-lg hover:scale-105 transition-transform duration-300">
 				Buy now
 			</a>
-			<p class="text-white/80 font-medium tracking-tight">$149</p>
+			<p class="text-white/90 font-medium tracking-tight text-lg ml-1 sm:ml-0">$149</p>
 		</div>
 	</div>
 </section>
 
 <!-- Zero Pressure Section -->
-<section class="min-h-screen w-full flex items-center justify-center bg-white px-6 py-24">
+<section class="min-h-screen min-h-dvh w-full flex items-center justify-center bg-white px-6 py-24">
 	<div class="max-w-5xl mx-auto text-center space-y-12">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black">
 			Zero Pressure.<br/><span class="text-gray-400">Absolute Balance.</span>
@@ -68,7 +68,7 @@
 </section>
 
 <!-- Features Bento Grid -->
-<section class="min-h-screen w-full bg-gray-50 px-6 py-24 flex flex-col justify-center">
+<section class="min-h-screen min-h-dvh w-full bg-gray-50 px-6 py-24 flex flex-col justify-center">
 	<div class="max-w-7xl mx-auto w-full">
 		<div class="mb-16 md:mb-24 text-center md:text-left">
 			<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-6">
@@ -83,7 +83,7 @@
 		<div bind:this={scrollContainer} onscroll={checkScrollEnd} class="flex md:grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0" style="scroll-snap-type: x mandatory;">
 			
 			<!-- Card 1 -->
-			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-[500px] w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50">
+			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] min-h-[70dvh] md:min-h-[500px] w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50">
 				<div class="mb-auto">
 					<Activity size={48} strokeWidth={1.5} class="text-black mb-6" />
 				</div>
@@ -94,7 +94,7 @@
 			</div>
 
 			<!-- Card 2 -->
-			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50">
+			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] min-h-[70dvh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50">
 				<div class="mb-auto">
 					<Ear size={48} strokeWidth={1.5} class="text-black mb-6" />
 				</div>
@@ -105,7 +105,7 @@
 			</div>
 
 			<!-- Card 3 -->
-			<div class="bg-black text-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm">
+			<div class="bg-black text-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] min-h-[70dvh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm">
 				<div class="mb-auto">
 					<Waves size={48} strokeWidth={1.5} class="text-white mb-6" />
 				</div>
@@ -134,7 +134,7 @@
 </section>
 
 <!-- Specs Section -->
-<section id="buy" class="min-h-screen w-full bg-white px-6 py-24 flex items-center">
+<section id="buy" class="min-h-screen min-h-dvh w-full bg-white px-6 py-24 flex items-center">
 	<div class="max-w-5xl mx-auto w-full">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-16 text-center md:text-left">
 			Technical Specifications
