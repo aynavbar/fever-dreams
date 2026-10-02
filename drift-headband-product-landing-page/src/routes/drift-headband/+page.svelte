@@ -84,7 +84,7 @@
 	<img src="/zero-pressure-bg.jpg" alt="Person sleeping on side with Drift headband" class="absolute inset-0 w-full h-full object-cover" />
 
 	<!-- Gradient Overlay: Dark at bottom for text contrast, fading to transparent -->
-	<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-40% to-transparent"></div>
+	<div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 via-40% to-transparent"></div>
 
 	<div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-white">
@@ -101,7 +101,7 @@
 	<div class="max-w-7xl mx-auto w-full">
 		<div class="mb-16 md:mb-24 text-center md:text-left">
 			<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-6">
-				The Science of Sound,<br/>Internalized.
+				The Sound Science,<br/>Internalized.
 			</h2>
 			<p class="text-xl md:text-2xl font-medium text-gray-500 tracking-tight max-w-2xl">
 				Achieving premium acoustic fidelity without acoustic isolation required rethinking how we perceive sound.
@@ -112,30 +112,30 @@
 		<div bind:this={scrollContainer} onscroll={checkScrollEnd} class="flex md:grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0" style="scroll-snap-type: x mandatory;">
 
 			<!-- Card 1 -->
-			<FeatureCard 
-				imageSrc="/bento_micro_transducers.jpg" 
-				imageAlt="Micro Transducers" 
-				title="Precision Micro-Transducers" 
+			<FeatureCard
+				imageSrc="/bento_micro_transducers.jpg"
+				imageAlt="Micro Transducers"
+				title="Precision Micro-Transducers"
 				class="min-h-[70vh] md:min-h-125 md:col-span-1 md:row-span-2"
 			>
 				Specially tuned, high-density actuators are woven into the headband's temporal zones. These convert standard audio signals into subtle, precise mechanical vibrations.
 			</FeatureCard>
 
 			<!-- Card 2 -->
-			<FeatureCard 
-				imageSrc="/bento_direct_cochlea.jpg" 
-				imageAlt="Direct to Cochlea" 
-				title="Direct-to-Cochlea" 
+			<FeatureCard
+				imageSrc="/bento_direct_cochlea.jpg"
+				imageAlt="Direct to Cochlea"
+				title="Direct-to-Cochlea"
 				class="min-h-[70vh] md:min-h-full"
 			>
 				Instead of pushing sound waves through the air, vibrations travel safely and silently through your cranial bones directly to your inner ear.
 			</FeatureCard>
 
 			<!-- Card 3 -->
-			<FeatureCard 
-				imageSrc="/bento_uncompromised_fidelity.jpg" 
-				imageAlt="Uncompromised Fidelity" 
-				title="Uncompromised Fidelity" 
+			<FeatureCard
+				imageSrc="/bento_uncompromised_fidelity.jpg"
+				imageAlt="Uncompromised Fidelity"
+				title="Uncompromised Fidelity"
 				class="min-h-[70vh] md:min-h-full"
 			>
 				Advanced equalization algorithms compensate for bone density transfer, preserving the deep, resonant bass and crisp highs of industry-leading in-ear monitors.
@@ -198,7 +198,7 @@
 <!-- Final CTA Section -->
 <section class="w-full bg-gray-50 px-6 py-32 flex flex-col items-center justify-center text-center border-t border-gray-200">
 	<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-6">
-		Ready for sound sleep?
+		Every high, every low.
 	</h2>
 	<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-500 max-w-2xl mb-12">
 		Experience absolute balance and uncompromised fidelity.
@@ -214,7 +214,7 @@
 <!-- Dialog -->
 {#if dialogOpen}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
-	<div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm px-6" onclick={closeDialog} onkeydown={(e) => { if (e.key === 'Escape') closeDialog(); }}>
+	<div class="fixed inset-0 z-100 flex items-center justify-center bg-black/50 backdrop-blur-sm px-6" onclick={closeDialog} onkeydown={(e) => { if (e.key === 'Escape') closeDialog(); }}>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div class="bg-white rounded-3xl p-10 md:p-14 max-w-md w-full text-center shadow-2xl" onclick={(e) => e.stopPropagation()} onkeydown={() => {}}>
 			<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed mb-10">
