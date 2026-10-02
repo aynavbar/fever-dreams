@@ -2,6 +2,7 @@
 	import './layout.css';
 	import favicon from '#lib/assets/favicon.svg';
 	import { Menu, X } from 'lucide-svelte';
+	import { slide } from 'svelte/transition';
 
 	let { children } = $props();
 
@@ -26,10 +27,12 @@
 
 	function toggleMobileMenu() {
 		isMobileMenuOpen = !isMobileMenuOpen;
-		if (isMobileMenuOpen) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = '';
+		if (typeof document !== 'undefined') {
+			if (isMobileMenuOpen) {
+				document.body.style.overflow = 'hidden';
+			} else {
+				document.body.style.overflow = '';
+			}
 		}
 	}
 </script>
@@ -41,9 +44,9 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b border-transparent {navbarVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} {isTop && !isMobileMenuOpen ? 'bg-transparent text-black' : 'bg-white/90 backdrop-blur-md border-gray-100 text-black'}">
+<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out border-b {navbarVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} {isMobileMenuOpen ? 'bg-white border-transparent text-black' : isTop ? 'bg-transparent border-transparent text-black' : 'bg-white/90 backdrop-blur-md border-gray-100 text-black'}">
 	<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-		<a href="/" class="text-lg font-medium tracking-tight relative z-[60]">Sleep Dynamics</a>
+		<a href="/" class="text-lg font-medium tracking-tight">Sleep Dynamics</a>
 		
 		<!-- Desktop Links -->
 		<div class="hidden md:flex gap-8 items-center text-sm font-medium tracking-tight">
@@ -53,7 +56,7 @@
 		</div>
 
 		<!-- Mobile Menu Toggle -->
-		<button class="md:hidden relative z-[60] p-2 -mr-2 text-black focus:outline-none" aria-label="Toggle Menu" onclick={toggleMobileMenu}>
+		<button class="md:hidden p-2 -mr-2 text-black focus:outline-none" aria-label="Toggle Menu" onclick={toggleMobileMenu}>
 			{#if isMobileMenuOpen}
 				<X size={24} />
 			{:else}
@@ -61,16 +64,16 @@
 			{/if}
 		</button>
 	</div>
-
-	<!-- Mobile Menu Overlay -->
-	{#if isMobileMenuOpen}
-		<div class="fixed inset-0 z-50 bg-white pt-24 px-6 flex flex-col gap-8 text-3xl font-medium tracking-tight md:hidden">
-			<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Aura Mask</a>
-			<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Zenith Pillow</a>
-			<a href="/drift-headband" class="text-black transition-colors" onclick={toggleMobileMenu}>Drift Headband</a>
-		</div>
-	{/if}
 </nav>
+
+<!-- Mobile Menu Overlay -->
+{#if isMobileMenuOpen}
+	<div transition:slide={{ duration: 400 }} class="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col gap-8 text-3xl font-medium tracking-tight md:hidden h-screen h-dvh w-full overflow-y-auto">
+		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Aura Mask</a>
+		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Zenith Pillow</a>
+		<a href="/drift-headband" class="text-black transition-colors" onclick={toggleMobileMenu}>Drift Headband</a>
+	</div>
+{/if}
 
 <main class="bg-white min-h-screen">
 	{@render children()}
@@ -80,9 +83,6 @@
 	<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
 		<div class="col-span-2 md:col-span-1">
 			<a href="/" class="text-xl font-medium tracking-tight">Sleep Dynamics</a>
-			<p class="mt-4 text-sm text-gray-400 font-medium tracking-tight">
-				Reimagining the way the world rests, one night at a time.
-			</p>
 		</div>
 		<div>
 			<h4 class="font-medium tracking-tight mb-4">Products</h4>
