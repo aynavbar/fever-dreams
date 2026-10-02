@@ -109,36 +109,42 @@
 		<div bind:this={scrollContainer} onscroll={checkScrollEnd} class="flex md:grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0" style="scroll-snap-type: x mandatory;">
 
 			<!-- Card 1 -->
-			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-125 w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50">
-				<div class="mb-auto">
-					<Activity size={48} strokeWidth={1.5} class="text-black mb-6" />
+			<div class="relative bg-gray-100 rounded-[2.5rem] p-3 md:p-6 flex flex-col justify-end min-h-[70vh] md:min-h-125 w-[85vw] md:w-auto shrink-0 snap-center md:col-span-1 md:row-span-2 shadow-sm border border-gray-100/50 overflow-hidden">
+				<img src="/bento_micro_transducers.jpg" alt="Micro Transducers" class="absolute inset-0 w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-black/10"></div>
+				
+				<div class="relative z-10 bg-white/95 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 shadow-lg border border-white/50 w-full mt-auto">
+					<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Precision Micro-Transducers</h3>
+					<p class="text-lg md:text-xl font-medium text-gray-600 leading-relaxed">
+						Specially tuned, high-density actuators are woven into the headband's temporal zones. These convert standard audio signals into subtle, precise mechanical vibrations.
+					</p>
 				</div>
-				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Precision Micro-Transducers</h3>
-				<p class="text-lg md:text-xl font-medium text-gray-500 leading-relaxed">
-					Specially tuned, high-density actuators are woven into the headband's temporal zones. These convert standard audio signals into subtle, precise mechanical vibrations.
-				</p>
 			</div>
 
 			<!-- Card 2 -->
-			<div class="bg-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50">
-				<div class="mb-auto">
-					<Ear size={48} strokeWidth={1.5} class="text-black mb-6" />
+			<div class="relative bg-gray-100 rounded-[2.5rem] p-3 md:p-6 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50 overflow-hidden">
+				<img src="/bento_direct_cochlea.jpg" alt="Direct to Cochlea" class="absolute inset-0 w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-black/10"></div>
+				
+				<div class="relative z-10 bg-white/95 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 shadow-lg border border-white/50 w-full mt-auto">
+					<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Direct-to-Cochlea</h3>
+					<p class="text-lg md:text-xl font-medium text-gray-600 leading-relaxed">
+						Instead of pushing sound waves through the air, vibrations travel safely and silently through your cranial bones directly to your inner ear.
+					</p>
 				</div>
-				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Direct-to-Cochlea</h3>
-				<p class="text-lg md:text-xl font-medium text-gray-500 leading-relaxed">
-					Instead of pushing sound waves through the air, vibrations travel safely and silently through your cranial bones directly to your inner ear.
-				</p>
 			</div>
 
 			<!-- Card 3 -->
-			<div class="bg-black text-white rounded-[2.5rem] p-10 md:p-12 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm">
-				<div class="mb-auto">
-					<Waves size={48} strokeWidth={1.5} class="text-white mb-6" />
+			<div class="relative bg-gray-100 rounded-[2.5rem] p-3 md:p-6 flex flex-col justify-end min-h-[70vh] md:min-h-full w-[85vw] md:w-auto shrink-0 snap-center shadow-sm border border-gray-100/50 overflow-hidden">
+				<img src="/bento_uncompromised_fidelity.jpg" alt="Uncompromised Fidelity" class="absolute inset-0 w-full h-full object-cover" />
+				<div class="absolute inset-0 bg-black/10"></div>
+				
+				<div class="relative z-10 bg-white/95 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 shadow-lg border border-white/50 w-full mt-auto">
+					<h3 class="text-3xl md:text-4xl font-semibold tracking-tight text-black mb-4">Uncompromised Fidelity</h3>
+					<p class="text-lg md:text-xl font-medium text-gray-600 leading-relaxed">
+						Advanced equalization algorithms compensate for bone density transfer, preserving the deep, resonant bass and crisp highs of industry-leading in-ear monitors.
+					</p>
 				</div>
-				<h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Uncompromised Fidelity</h3>
-				<p class="text-lg md:text-xl font-medium text-gray-400 leading-relaxed">
-					Advanced equalization algorithms compensate for bone density transfer, preserving the deep, resonant bass and crisp highs of industry-leading in-ear monitors.
-				</p>
 			</div>
 
 		</div>
