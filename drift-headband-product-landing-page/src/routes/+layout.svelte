@@ -7,11 +7,6 @@
 	import FooterColumn from '../lib/components/FooterColumn.svelte';
 	import FooterLink from '../lib/components/FooterLink.svelte';
 
-	import { dev } from '$app/env';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-
-	injectAnalytics({ mode: dev ? 'development' : 'production' });
-
 	let { children } = $props();
 
 	let lastScrollY = $state(0);
