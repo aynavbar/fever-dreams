@@ -1,8 +1,11 @@
 <script lang="ts">
-	import { Activity, Ear, Waves, ChevronLeft, ChevronRight, Redo } from 'lucide-svelte';
+	import { Activity, Ear, Waves, ChevronLeft, ChevronRight, Redo, Heart } from 'lucide-svelte';
 
 	let scrollContainer: HTMLElement;
 	let isAtEnd = $state(false);
+	let dialogOpen = $state(false);
+	let liked = $state(false);
+	let beating = $state(false);
 
 	function checkScrollEnd() {
 		if (!scrollContainer) return;
@@ -30,6 +33,24 @@
 			scrollRight();
 		}
 	}
+
+	function openDialog() {
+		dialogOpen = true;
+	}
+
+	function closeDialog() {
+		dialogOpen = false;
+	}
+
+	function toggleLike() {
+		if (!liked) {
+			liked = true;
+			beating = true;
+			setTimeout(() => { beating = false; }, 600);
+		} else {
+			liked = false;
+		}
+	}
 </script>
 
 <!-- Hero Section -->
@@ -47,9 +68,9 @@
 		</p>
 
 		<div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-			<a href="#buy" class="bg-white text-black px-9 py-3.5 rounded-full font-semibold tracking-tight text-base md:text-lg hover:scale-105 transition-transform duration-300">
+			<button onclick={openDialog} class="bg-white text-black px-9 py-3.5 rounded-full font-semibold tracking-tight text-base md:text-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
 				Buy now
-			</a>
+			</button>
 			<p class="text-white/90 font-medium tracking-tight text-lg ml-1 sm:ml-0">$149</p>
 		</div>
 	</div>
@@ -58,10 +79,10 @@
 <!-- Zero Pressure Section -->
 <section class="relative min-h-svh w-full flex items-end justify-center overflow-hidden pb-12 md:pb-16 px-6">
 	<img src="/zero-pressure-bg.jpg" alt="Person sleeping on side with Drift headband" class="absolute inset-0 w-full h-full object-cover" />
-	
+
 	<!-- Gradient Overlay: Dark at bottom for text contrast, fading to transparent -->
 	<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-40% to-transparent"></div>
-	
+
 	<div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-white">
 			Zero Pressure.<br/><span class="text-white/60">Absolute Balance.</span>
@@ -180,6 +201,49 @@
 	</div>
 </section>
 
+<!-- Final CTA Section -->
+<section class="w-full bg-gray-50 px-6 py-32 flex flex-col items-center justify-center text-center border-t border-gray-200">
+	<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-6">
+		Ready for sound sleep?
+	</h2>
+	<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-500 max-w-2xl mb-12">
+		Experience absolute balance and uncompromised fidelity.
+	</p>
+	<div class="flex flex-col sm:flex-row items-center gap-4">
+		<button onclick={openDialog} class="bg-black text-white px-12 py-4 rounded-full font-semibold tracking-tight text-lg hover:scale-105 transition-transform duration-300 shadow-sm cursor-pointer">
+			Buy now
+		</button>
+		<p class="text-gray-900 font-medium tracking-tight text-lg">$149</p>
+	</div>
+</section>
+
+<!-- Dialog -->
+{#if dialogOpen}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm px-6" onclick={closeDialog} onkeydown={(e) => { if (e.key === 'Escape') closeDialog(); }}>
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div class="bg-white rounded-3xl p-10 md:p-14 max-w-md w-full text-center shadow-2xl" onclick={(e) => e.stopPropagation()} onkeydown={() => {}}>
+			<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed mb-10">
+				Like the product? It's not real though 😢. You <em>can</em> tap the button below ☺️. Thanks for looking at the site
+			</p>
+
+			<button
+				onclick={toggleLike}
+				class="inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 transition-all duration-300 font-semibold tracking-tight text-lg cursor-pointer {liked ? 'bg-red-50 border-red-400 text-red-500' : 'bg-gray-50 border-gray-200 text-gray-600 hover:border-gray-300'}"
+			>
+				<span class="inline-flex {beating ? 'heartbeat' : ''}">
+					{#if liked}
+						<Heart size={28} strokeWidth={2} class="text-red-500 fill-red-500" />
+					{:else}
+						<Heart size={28} strokeWidth={2} class="text-gray-400" />
+					{/if}
+				</span>
+				{liked ? 'Liked' : 'Like'}
+			</button>
+		</div>
+	</div>
+{/if}
+
 <style>
 	.hide-scrollbar::-webkit-scrollbar {
 		display: none;
@@ -187,5 +251,17 @@
 	.hide-scrollbar {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+	}
+
+	@keyframes heartbeat {
+		0% { transform: scale(1); }
+		15% { transform: scale(1.35); }
+		30% { transform: scale(1); }
+		45% { transform: scale(1.25); }
+		60% { transform: scale(1); }
+	}
+
+	:global(.heartbeat) {
+		animation: heartbeat 0.6s ease-in-out;
 	}
 </style>
