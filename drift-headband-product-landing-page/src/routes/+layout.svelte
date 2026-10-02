@@ -46,7 +46,16 @@
 
 <nav class="fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out border-b {navbarVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} {isMobileMenuOpen ? 'bg-white border-transparent text-black' : isTop ? 'bg-transparent border-transparent text-black' : 'bg-white/90 backdrop-blur-md border-gray-100 text-black'}">
 	<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-		<a href="/" class="text-lg font-medium tracking-tight">Sleep Dynamics</a>
+		<a href="/" class="group flex items-center h-8 md:h-10 w-auto md:w-[200px] cursor-pointer">
+			<div class="relative z-10 shrink-0 flex items-center justify-center">
+				<img src={favicon} alt="Logo" class="w-8 h-8 md:w-10 md:h-10 rounded-[0.4rem] md:rounded-xl shadow-sm" />
+			</div>
+			<div class="relative z-0 overflow-hidden flex-1 h-full flex items-center">
+				<span class="pl-3 text-lg font-medium tracking-tight whitespace-nowrap transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:-translate-x-full md:group-hover:translate-x-0">
+					Sleep Dynamics
+				</span>
+			</div>
+		</a>
 
 		<!-- Desktop Links -->
 		<div class="hidden md:flex gap-8 items-center text-sm font-medium tracking-tight">
