@@ -33,7 +33,7 @@
 </script>
 
 <!-- Hero Section -->
-<section class="relative h-dvh w-full flex items-end justify-start overflow-hidden pb-6 md:pb-8">
+<section class="relative h-svh w-full flex items-end justify-start overflow-hidden pb-6 md:pb-8">
 	<img src="/hero-bg.jpg" alt="Drift Headband variants" class="absolute inset-0 w-full h-full object-cover" />
 
 	<!-- Gradient Overlay: Rich dark contrast strictly around the bottom text area, fading quickly to clear -->
@@ -56,7 +56,7 @@
 </section>
 
 <!-- Zero Pressure Section -->
-<section class="min-h-dvh w-full flex items-center justify-center bg-white px-6 py-24">
+<section class="min-h-svh w-full flex items-center justify-center bg-white px-6 py-24">
 	<div class="max-w-5xl mx-auto text-center space-y-12">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black">
 			Zero Pressure.<br/><span class="text-gray-400">Absolute Balance.</span>
@@ -68,7 +68,7 @@
 </section>
 
 <!-- Features Bento Grid -->
-<section class="min-h-dvh w-full bg-gray-50 px-6 py-24 flex flex-col justify-center">
+<section class="min-h-svh w-full bg-gray-50 px-6 py-24 flex flex-col justify-center">
 	<div class="max-w-7xl mx-auto w-full">
 		<div class="mb-16 md:mb-24 text-center md:text-left">
 			<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-6">
@@ -134,7 +134,7 @@
 </section>
 
 <!-- Specs Section -->
-<section id="buy" class="min-h-dvh w-full bg-white px-6 py-24 flex items-center">
+<section id="buy" class="min-h-svh w-full bg-white px-6 py-24 flex items-center">
 	<div class="max-w-5xl mx-auto w-full">
 		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black mb-16 text-center md:text-left">
 			Technical Specifications
