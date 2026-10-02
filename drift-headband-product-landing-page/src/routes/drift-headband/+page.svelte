@@ -56,12 +56,17 @@
 </section>
 
 <!-- Zero Pressure Section -->
-<section class="min-h-svh w-full flex items-center justify-center bg-white px-6 py-24">
-	<div class="max-w-5xl mx-auto text-center space-y-12">
-		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-black">
-			Zero Pressure.<br/><span class="text-gray-400">Absolute Balance.</span>
+<section class="relative min-h-svh w-full flex items-end justify-center overflow-hidden pb-12 md:pb-16 px-6">
+	<img src="/zero-pressure-bg.jpg" alt="Person sleeping on side with Drift headband" class="absolute inset-0 w-full h-full object-cover" />
+	
+	<!-- Gradient Overlay: Dark at bottom for text contrast, fading to transparent -->
+	<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 via-40% to-transparent"></div>
+	
+	<div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+		<h2 class="text-5xl md:text-7xl font-semibold tracking-tighter text-white">
+			Zero Pressure.<br/><span class="text-white/60">Absolute Balance.</span>
 		</h2>
-		<p class="text-xl md:text-2xl font-medium tracking-tight text-gray-500 max-w-3xl mx-auto leading-relaxed">
+		<p class="text-xl md:text-2xl font-medium tracking-tight text-white/90 max-w-3xl mx-auto leading-relaxed">
 			Housed in an ultra-slim, breathable acoustic fabric, the device sits completely flush against your head. You can turn, rest, and sleep naturally.
 		</p>
 	</div>
