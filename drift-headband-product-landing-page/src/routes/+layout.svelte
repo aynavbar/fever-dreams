@@ -3,6 +3,9 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { Menu, X } from 'lucide-svelte';
 	import { slide } from 'svelte/transition';
+	import NavLink from '../lib/components/NavLink.svelte';
+	import FooterColumn from '../lib/components/FooterColumn.svelte';
+	import FooterLink from '../lib/components/FooterLink.svelte';
 
 	let { children } = $props();
 
@@ -59,9 +62,9 @@
 
 		<!-- Desktop Links -->
 		<div class="hidden md:flex gap-8 items-center text-sm font-medium tracking-tight">
-			<a href="/#" class="text-gray-500 hover:text-black transition-colors">Aura Mask</a>
-			<a href="/#" class="text-gray-500 hover:text-black transition-colors">Zenith Pillow</a>
-			<a href="/drift-headband" class="text-black transition-colors">Drift Headband</a>
+			<NavLink href="/#" class="text-gray-500 hover:text-black">Aura Mask</NavLink>
+			<NavLink href="/#" class="text-gray-500 hover:text-black">Zenith Pillow</NavLink>
+			<NavLink href="/drift-headband" class="text-black">Drift Headband</NavLink>
 		</div>
 
 		<!-- Mobile Menu Toggle -->
@@ -78,9 +81,9 @@
 <!-- Mobile Menu Overlay -->
 {#if isMobileMenuOpen}
 	<div transition:slide={{ duration: 400 }} class="fixed inset-0 z-40 bg-white pt-24 px-6 flex flex-col gap-8 text-3xl font-medium tracking-tight md:hidden h-dvh w-full overflow-y-auto">
-		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Aura Mask</a>
-		<a href="/#" class="text-gray-400 hover:text-black transition-colors" onclick={toggleMobileMenu}>Zenith Pillow</a>
-		<a href="/drift-headband" class="text-black transition-colors" onclick={toggleMobileMenu}>Drift Headband</a>
+		<NavLink href="/#" class="text-gray-400 hover:text-black" onclick={toggleMobileMenu}>Aura Mask</NavLink>
+		<NavLink href="/#" class="text-gray-400 hover:text-black" onclick={toggleMobileMenu}>Zenith Pillow</NavLink>
+		<NavLink href="/drift-headband" class="text-black" onclick={toggleMobileMenu}>Drift Headband</NavLink>
 	</div>
 {/if}
 
@@ -93,30 +96,21 @@
 		<div class="col-span-2 md:col-span-1">
 			<a href="/" class="text-xl font-medium tracking-tight">Sleep Dynamics</a>
 		</div>
-		<div>
-			<h4 class="font-medium tracking-tight mb-4">Products</h4>
-			<ul class="space-y-3 text-sm text-gray-400 font-medium tracking-tight">
-				<li><a href="/#" class="hover:text-white transition-colors">Aura Mask</a></li>
-				<li><a href="/#" class="hover:text-white transition-colors">Zenith Pillow</a></li>
-				<li><a href="/drift-headband" class="hover:text-white transition-colors">Drift Headband</a></li>
-			</ul>
-		</div>
-		<div>
-			<h4 class="font-medium tracking-tight mb-4">Company</h4>
-			<ul class="space-y-3 text-sm text-gray-400 font-medium tracking-tight">
-				<li><a href="/#" class="hover:text-white transition-colors">About Us</a></li>
-				<li><a href="/#" class="hover:text-white transition-colors">Careers</a></li>
-				<li><a href="/#" class="hover:text-white transition-colors">Press</a></li>
-			</ul>
-		</div>
-		<div>
-			<h4 class="font-medium tracking-tight mb-4">Support</h4>
-			<ul class="space-y-3 text-sm text-gray-400 font-medium tracking-tight">
-				<li><a href="/#" class="hover:text-white transition-colors">Help Center</a></li>
-				<li><a href="/#" class="hover:text-white transition-colors">Warranty</a></li>
-				<li><a href="/#" class="hover:text-white transition-colors">Contact Us</a></li>
-			</ul>
-		</div>
+		<FooterColumn title="Products">
+			<FooterLink href="/#">Aura Mask</FooterLink>
+			<FooterLink href="/#">Zenith Pillow</FooterLink>
+			<FooterLink href="/drift-headband">Drift Headband</FooterLink>
+		</FooterColumn>
+		<FooterColumn title="Company">
+			<FooterLink href="/#">About Us</FooterLink>
+			<FooterLink href="/#">Careers</FooterLink>
+			<FooterLink href="/#">Press</FooterLink>
+		</FooterColumn>
+		<FooterColumn title="Support">
+			<FooterLink href="/#">Help Center</FooterLink>
+			<FooterLink href="/#">Warranty</FooterLink>
+			<FooterLink href="/#">Contact Us</FooterLink>
+		</FooterColumn>
 	</div>
 	<div class="max-w-7xl mx-auto border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium tracking-tight text-gray-500">
 		<p>&copy; 2026 Sleep Dynamics Inc. All rights reserved.</p>
