@@ -10,9 +10,9 @@
 
 <script lang="ts">
 	import { Activity, Ear, Waves, ChevronLeft, ChevronRight, Redo, Heart } from 'lucide-svelte';
-	import FeatureCard from '../../lib/components/FeatureCard.svelte';
-	import SpecRow from '../../lib/components/SpecRow.svelte';
-	import Button from '../../lib/components/Button.svelte';
+	import FeatureCard from '#lib/components/FeatureCard.svelte';
+	import SpecRow from '#lib/components/SpecRow.svelte';
+	import Button from '#lib/components/Button.svelte';
 
 	let scrollContainer: HTMLElement;
 	let isAtEnd = $state(false);

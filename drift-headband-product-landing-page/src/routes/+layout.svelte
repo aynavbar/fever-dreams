@@ -3,9 +3,9 @@
 	import favicon from '#lib/assets/favicon.svg';
 	import { Menu, X } from 'lucide-svelte';
 	import { slide } from 'svelte/transition';
-	import NavLink from '../lib/components/NavLink.svelte';
-	import FooterColumn from '../lib/components/FooterColumn.svelte';
-	import FooterLink from '../lib/components/FooterLink.svelte';
+	import NavLink from '#lib/components/NavLink.svelte';
+	import FooterColumn from '#lib/components/FooterColumn.svelte';
+	import FooterLink from '#lib/components/FooterLink.svelte';
 
 	let { children } = $props();
 
