@@ -3,9 +3,9 @@
 	<meta name="description" content="The Drift Headband is an ultra-slim, breathable headband that uses bone conduction micro-transducers to deliver audio directly to your inner ear." />
 	<meta property="og:title" content="Drift Headband — Sleep Dynamics" />
 	<meta property="og:description" content="The Drift Headband is an ultra-slim, breathable headband that uses bone conduction micro-transducers to deliver audio directly to your inner ear." />
-	<meta property="og:image" content="https://sleepdynamics.com/product_og.jpg" />
+	<meta property="og:image" content="https://sdynamics.vercel.app/product_og.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="https://sleepdynamics.com/product_og.jpg" />
+	<meta name="twitter:image" content="https://sdynamics.vercel.app/product_og.jpg" />
 </svelte:head>
 
 <script lang="ts">
