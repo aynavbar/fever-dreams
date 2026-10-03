@@ -10,16 +10,16 @@
 <svelte:head>
 	<title>Sleep Dynamics</title>
 	<meta name="description" content="Discover Sleep Dynamics. Experience the future of sleep technology with our innovative devices designed to balance comfort and acoustic perfection." />
-	
+
 	<meta property="og:title" content="Sleep Dynamics" />
 	<meta property="og:description" content="Discover Sleep Dynamics. Experience the future of sleep technology with our innovative devices designed to balance comfort and acoustic perfection." />
-	<meta property="og:image" content="/home_og.png" />
-	
+	<meta property="og:image" content="https://sleepdynamics.com/home_og.png" />
+
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Sleep Dynamics" />
 	<meta name="twitter:description" content="Discover Sleep Dynamics. Experience the future of sleep technology with our innovative devices designed to balance comfort and acoustic perfection." />
-	<meta name="twitter:image" content="/home_og.png" />
-	
+	<meta name="twitter:image" content="https://sleepdynamics.com/home_og.png" />
+
 	<!-- Fallback for non-JS environments or crawlers -->
 	<meta http-equiv="refresh" content="0;url=/drift-headband" />
 </svelte:head>
