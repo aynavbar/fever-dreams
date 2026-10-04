@@ -79,7 +79,7 @@ The entire page follows a monochrome, light-mode aesthetic with generous whitesp
 
 ## Routing
 
-- The root (`/`) automatically redirects to `/drift-headband` via a server-side redirect in `+page.server.js`.
+- The root (`/`) automatically redirects to `/drift-headband` via a client-side redirect and meta refresh in `+page.svelte`.
 - All placeholder nav links use `/#` instead of `#` to avoid SvelteKit accessibility warnings.
 
 ## Custom Assets
@@ -110,12 +110,13 @@ pnpm preview
 ```
 src/
 ├── lib/
-│   └── assets/
-│       └── favicon.svg          # Custom wavy-lines logo
+│   ├── assets/
+│   │   └── favicon.svg          # Custom wavy-lines logo
+│   └── components/              # Reusable UI components
 ├── routes/
 │   ├── +layout.svelte           # Global layout (navbar, footer, mobile menu)
-│   ├── +layout.css              # Global styles & Tailwind imports
-│   ├── +page.server.js          # Root → /drift-headband redirect
+│   ├── layout.css               # Global styles & Tailwind imports
+│   ├── +page.svelte             # Root → /drift-headband redirect
 │   └── drift-headband/
 │       └── +page.svelte         # Main product landing page
 static/
@@ -123,5 +124,8 @@ static/
 ├── zero-pressure-bg.jpg         # Zero Pressure section background
 ├── bento_micro_transducers.jpg  # Bento card 1 background
 ├── bento_direct_cochlea.jpg     # Bento card 2 background
-└── bento_uncompromised_fidelity.jpg  # Bento card 3 background
+├── bento_uncompromised_fidelity.jpg  # Bento card 3 background
+├── home_og.png                  # Open Graph image for home
+├── product_og.jpg               # Open Graph image for product
+└── robots.txt                   # Search engine crawler directives
 ```
